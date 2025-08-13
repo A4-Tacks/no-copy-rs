@@ -1,0 +1,16 @@
+[package]
+name = "no-copy"
+version = "0.1.0"
+edition = "2024"
+
+authors = ["A4-Tacks <wdsjxhno1001@163.com>"]
+keywords = ["no_std", "copy", "closure"]
+categories = ["no-std", "data-structures", "rust-patterns"]
+description = "A simple packer, but no implement copy"
+
+license = "MIT"
+repository = "https://github.com/A4-Tacks/no-copy-rs"
+
+readme = "README.md"
+
+[dependencies]
