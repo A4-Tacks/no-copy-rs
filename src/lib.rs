@@ -12,7 +12,12 @@ mod ops_impl;
 #[doc = include_str!("../README.md")]
 #[derive(PartialEq, Eq, PartialOrd, Ord, Hash, Default, Clone)]
 #[repr(transparent)]
-pub struct NoCopy<T: ?Sized>(pub T);
+pub struct NoCopy<T: ?Sized>(
+    /// Avoid use `x.0` inside the closure, as the closure can capture fields
+    ///
+    /// Trying `*{x}` or `{x}.0`?
+    pub T
+);
 
 impl<T: IntoIterator> IntoIterator for NoCopy<T> {
     type Item = T::Item;
